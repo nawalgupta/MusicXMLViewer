@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 
 		try {
-			MusicXMLLib musicXMLLib = new MusicXMLLib(null);
+			MusicXMLLib musicXMLLib
+					= new MusicXMLLib(null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

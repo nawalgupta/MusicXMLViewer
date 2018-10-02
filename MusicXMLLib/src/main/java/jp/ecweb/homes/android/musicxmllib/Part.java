@@ -2,16 +2,15 @@ package jp.ecweb.homes.android.musicxmllib;
 
 import org.w3c.dom.Node;
 
-public class Part {
+import static jp.ecweb.homes.android.musicxmllib.Const.ATTR_ID;
 
-	private Node elementNode;
+public class Part extends Element {
 
 	Part(Node node) {
-		this.elementNode = node;
+		super(node);
 	}
 
 	public String getId() {
-		Node node = elementNode.getAttributes().getNamedItem("id");
-		return node.getNodeValue();
+		return getAttributeValue(ATTR_ID);
 	}
 }

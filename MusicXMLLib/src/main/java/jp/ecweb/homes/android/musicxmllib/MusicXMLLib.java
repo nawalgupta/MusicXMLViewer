@@ -12,7 +12,7 @@ public class MusicXMLLib {
 	}
 
 	public List<Part> getPartlist() {
-		return null;
+		return mMusicXMLMain.getPartList();
 	}
 
 	public List<Measure> getMeasureList() {

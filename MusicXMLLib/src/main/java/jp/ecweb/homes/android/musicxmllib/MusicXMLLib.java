@@ -1,19 +1,21 @@
 package jp.ecweb.homes.android.musicxmllib;
 
-import org.w3c.dom.Document;
-
-import java.io.File;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.InputStream;
+import java.util.List;
 
 public class MusicXMLLib {
 
-	private Document mDocument;
+	private MusicXMLMain mMusicXMLMain;
 
-	public MusicXMLLib(File xmlFile) throws Exception {
-		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-		DocumentBuilder builder = factory.newDocumentBuilder();
-		mDocument = builder.parse(xmlFile);
+	public MusicXMLLib(InputStream xml) throws Exception {
+		mMusicXMLMain = new MusicXMLMain(xml);
+	}
+
+	public List<Part> getPartlist() {
+		return null;
+	}
+
+	public List<Measure> getMeasureList() {
+		return mMusicXMLMain.getMeasureList();
 	}
 }

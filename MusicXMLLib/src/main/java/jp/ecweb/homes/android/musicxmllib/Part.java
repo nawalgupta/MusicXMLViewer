@@ -4,13 +4,15 @@ import org.w3c.dom.Node;
 
 import static jp.ecweb.homes.android.musicxmllib.Const.ATTR_ID;
 
-public class Part extends Element {
+public class Part {
 
-	Part(Node node) {
-		super(node);
-	}
+	private String id;
 
-	public String getId() {
-		return getAttributeValue(ATTR_ID);
-	}
+//	Part(Node node) {
+//		super(node);
+//	}
+//
+//	public String getId() {
+//		return getAttributeValue(ATTR_ID);
+//	}
 }

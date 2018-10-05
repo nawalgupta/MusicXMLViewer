@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
 			MusicXMLLib musicXMLLib
 					= new MusicXMLLib(getResources().openRawResource(R.raw.chant));
 
-			for (Part part : musicXMLLib.getPartlist()) {
-				Log.d(TAG, "part id = " + part.getId());
-			}
+//			for (Part part : musicXMLLib.getPartlist()) {
+//				Log.d(TAG, "part id = " + part.getId());
+//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

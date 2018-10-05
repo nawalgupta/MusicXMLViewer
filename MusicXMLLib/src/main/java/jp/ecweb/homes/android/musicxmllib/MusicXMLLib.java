@@ -11,11 +11,11 @@ public class MusicXMLLib {
 		mMusicXMLMain = new MusicXMLMain(xml);
 	}
 
-	public List<Part> getPartlist() {
-		return mMusicXMLMain.getPartList();
-	}
-
-	public List<Measure> getMeasureList() {
-		return mMusicXMLMain.getMeasureList();
-	}
+//	public List<Part> getPartlist() {
+//		return mMusicXMLMain.getPartList();
+//	}
+//
+//	public List<Measure> getMeasureList() {
+//		return mMusicXMLMain.getMeasureList();
+//	}
 }

@@ -1,17 +1,40 @@
 package jp.ecweb.homes.android.musicxmllib;
 
-import org.w3c.dom.Node;
+import org.xml.sax.Attributes;
 
 class Element {
 
-	private Node elementNode;
+	private Attributes mAttributes;
 
-	Element(Node node) {
-		this.elementNode = node;
+
+	public Element() {
 	}
 
-	String getAttributeValue(String name) {
-		Node node = elementNode.getAttributes().getNamedItem(name);
-		return node.getNodeValue();
+	Element(Attributes attributes) {
+		this.mAttributes = attributes;
+	}
+
+
+	boolean containsKey(String key) {
+		String attrValue = mAttributes.getValue(key);
+		return attrValue != null;
+	}
+
+	String getAttributeString(String key) {
+		return mAttributes.getValue(key);
+	}
+
+	int getAttributeInt(String key) {
+		String attrValue = mAttributes.getValue(key);
+		if (attrValue != null) {
+			return Integer.parseInt(attrValue);
+		} else {
+			// todo 例外スロー
+			return -1;
+		}
+	}
+
+	int tenthsToInt(int tenths) {
+		return tenths * 10;
 	}
 }

@@ -11,6 +11,10 @@ public class MusicXMLLib {
 		mMusicXMLMain = new MusicXMLMain(xml);
 	}
 
+	public ScorePartwise getScorePartwise() {
+		return mMusicXMLMain.getScorePartwise();
+	}
+
 //	public List<Part> getPartlist() {
 //		return mMusicXMLMain.getPartList();
 //	}

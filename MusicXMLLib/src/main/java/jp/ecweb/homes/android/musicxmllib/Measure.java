@@ -1,15 +1,15 @@
 package jp.ecweb.homes.android.musicxmllib;
 
-import org.xml.sax.Attributes;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static jp.ecweb.homes.android.musicxmllib.Const.ATTR_MEASURE_IMPLICIT;
-import static jp.ecweb.homes.android.musicxmllib.Const.ATTR_MEASURE_NONCONTROLLING;
-import static jp.ecweb.homes.android.musicxmllib.Const.ATTR_MEASURE_NUMBER;
-
 public class Measure extends Element {
+
+	// Attributes
+	private String number;
+	private String implicit;
+	private String nonControlling;
+	private Integer width;
 
 	// Child Elements
 	// TODO 未実装エレメント
@@ -32,22 +32,46 @@ public class Measure extends Element {
 		super();
 	}
 
-	Measure(Attributes attributes) {
-		super(attributes);
-	}
-
 	// region Attributes
 
 	public String getNumber() {
-		return getAttributeString(ATTR_MEASURE_NUMBER);
+		return number;
+	}
+
+	public void setNumber(String number) {
+		this.number = number;
 	}
 
 	public String getImplicit() {
-		return getAttributeString(ATTR_MEASURE_IMPLICIT);
+		return implicit;
+	}
+
+	public void setImplicit(String implicit) {
+		this.implicit = implicit;
 	}
 
 	public String getNonControlling() {
-		return getAttributeString(ATTR_MEASURE_NONCONTROLLING);
+		return nonControlling;
+	}
+
+	public void setNonControlling(String nonControlling) {
+		this.nonControlling = nonControlling;
+	}
+
+	public Integer getWidth() {
+		return width;
+	}
+
+	public void setWidth(Integer width) {
+		this.width = width;
+	}
+
+	public void setWidth(String width) {
+		try {
+			setWidth(Integer.valueOf(width));
+		} catch (NumberFormatException e) {
+			this.width = null;
+		}
 	}
 
 	// endregion
@@ -56,6 +80,10 @@ public class Measure extends Element {
 
 	public void addNote(Note note) {
 		this.note.add(note);
+	}
+
+	public List<Note> getNoteList() {
+		return note;
 	}
 
 	// endregion
